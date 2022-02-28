@@ -1,0 +1,34 @@
+<HTML>
+
+	<BODY>
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		
+		<DIV ID="my">
+			<TABLE WIDTH="100%" BORDER="1">
+				<tr v-for="row in matrix">
+					<td v-for="el in row">{{el}}</td>
+				</tr>
+			</TABLE>
+		</DIV>
+		
+		<SCRIPT>
+		
+			new Vue({
+				el: "#my",
+				
+				data:
+				{
+					matrix: 
+						[
+							[1, 2, 3, 4, 5], 
+							[6, 7, 8, 9, 10],
+							[11, 12, 13, 14, 15],
+						],
+				}
+			});
+		
+		</SCRIPT>
+		
+	</BODY>
+
+</HTML>

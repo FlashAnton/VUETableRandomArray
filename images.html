@@ -1,0 +1,41 @@
+<HTML>
+
+	<BODY>
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		
+		<DIV ID="my">
+			<TABLE HEIGHT="100%" WIDTH="100%" STYLE="border: solid 1px black">
+				<TR ALIGN="center">
+					<TD VALIGN="middle">
+						<table style="border-collapse: collapse">
+							<tr v-for="row in images">
+								<td v-for="el in row">
+									<img :src="el">
+								</td>
+							</tr>
+						</table>
+					</TD>
+				</TR>
+			</TABLE>
+		</DIV>
+		
+		<SCRIPT>
+		
+			new Vue({
+				el: "#my",
+				
+				data:
+				{
+					images: 
+						[
+							["up0001.jpg", "up0002.jpg", "up0003.jpg", "up0004.jpg"], 
+							["down0001.jpg", "down0002.jpg", "down0003.jpg", "down0004.jpg"],
+						],
+				}
+			});
+		
+		</SCRIPT>
+		
+	</BODY>
+
+</HTML>

@@ -1,0 +1,71 @@
+<HTML>
+
+	<BODY>
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		
+		<DIV ID="my">
+			<TABLE HEIGHT="100%" WIDTH="100%" STYLE="border: solid 1px black">
+				<TR ALIGN="center">
+					<TD VALIGN="middle">
+						<table style="border-collapse: collapse">
+							<tr v-for="row in rnd_im">
+								<td v-for="el in row">
+									<img :src="el">
+								</td>
+							</tr>
+						</table>
+					</TD>
+				</TR>
+			</TABLE>
+		</DIV>
+		
+		<SCRIPT>
+		
+			new Vue({
+				el: "#my",
+				
+				data:
+				{
+					cols: 4,
+					rows: 2,
+					images: 
+						[
+							["up0001.jpg", "up0002.jpg", "up0003.jpg", "up0004.jpg"], 
+							["down0001.jpg", "down0002.jpg", "down0003.jpg", "down0004.jpg"],
+						],
+				},
+				
+				computed:
+				{
+					rnd_im: function()
+					{
+						var i;
+						var j;
+						
+						var row;
+						var arr;
+						
+						arr = [];
+						for (var a = 0; a < this.rows; a++)
+						{
+							row = [];
+							for (var b = 0; b < this.cols; b++)
+							{
+								i = Math.round(Math.random() * (this.rows - 1));
+								j = Math.round(Math.random() * (this.cols - 1));
+								
+								row.push(this.images[i][j]);
+							}
+							arr.push(row);
+						}
+						
+						return arr;
+					}
+				}
+			});
+		
+		</SCRIPT>
+		
+	</BODY>
+
+</HTML>

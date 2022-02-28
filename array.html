@@ -1,0 +1,29 @@
+<HTML>
+
+	<BODY>
+		<SCRIPT SRC="Vue.js"></SCRIPT>
+		
+		<DIV ID="my">
+			<TABLE WIDTH="100%" BORDER="1">
+				<tr>
+					<td v-for="a in array">{{a}}</td>
+				</tr>
+			</TABLE>
+		</DIV>
+		
+		<SCRIPT>
+		
+			new Vue({
+				el: "#my",
+				
+				data:
+				{
+					array: [1, 2, 3, 4, 5],
+				}
+			});
+		
+		</SCRIPT>
+		
+	</BODY>
+
+</HTML>
