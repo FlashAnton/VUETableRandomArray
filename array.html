@@ -1,29 +1,23 @@
-<HTML>
-
-	<BODY>
-		<SCRIPT SRC="Vue.js"></SCRIPT>
+<html>
+	<body>
+		<script src="Vue.js"></script>
 		
-		<DIV ID="my">
-			<TABLE WIDTH="100%" BORDER="1">
+		<div id="my">
+			<table width="100%" border="1">
 				<tr>
 					<td v-for="a in array">{{a}}</td>
 				</tr>
-			</TABLE>
-		</DIV>
+			</table>
+		</div>
 		
-		<SCRIPT>
-		
+		<script>
 			new Vue({
 				el: "#my",
 				
-				data:
-				{
+				data: {
 					array: [1, 2, 3, 4, 5],
 				}
 			});
-		
-		</SCRIPT>
-		
-	</BODY>
-
-</HTML>
+		</script>
+	</body>
+</html>

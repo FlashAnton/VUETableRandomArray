@@ -1,12 +1,11 @@
-<HTML>
-
-	<BODY>
-		<SCRIPT SRC="Vue.js"></SCRIPT>
+<html>
+	<body>
+		<script src="Vue.js"></script>
 		
-		<DIV ID="my">
-			<TABLE HEIGHT="100%" WIDTH="100%" STYLE="border: solid 1px black">
-				<TR ALIGN="center">
-					<TD VALIGN="middle">
+		<div id="my">
+			<table height="100%" width="100%" style="border: solid 1px black">
+				<tr align="center">
+					<td valign="middle">
 						<table style="border-collapse: collapse">
 							<tr v-for="row in images">
 								<td v-for="el in row">
@@ -14,18 +13,16 @@
 								</td>
 							</tr>
 						</table>
-					</TD>
-				</TR>
-			</TABLE>
-		</DIV>
+					</td>
+				</tr>
+			</table>
+		</div>
 		
-		<SCRIPT>
-		
+		<script>
 			new Vue({
 				el: "#my",
 				
-				data:
-				{
+				data: {
 					images: 
 						[
 							["up0001.jpg", "up0002.jpg", "up0003.jpg", "up0004.jpg"], 
@@ -33,9 +30,6 @@
 						],
 				}
 			});
-		
-		</SCRIPT>
-		
-	</BODY>
-
-</HTML>
+		</script>	
+	</body>
+</html>

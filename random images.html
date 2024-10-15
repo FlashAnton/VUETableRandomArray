@@ -1,12 +1,12 @@
-<HTML>
-
-	<BODY>
-		<SCRIPT SRC="Vue.js"></SCRIPT>
+<html>
+	<title>Случайные фрагменты изображения</title>
+	<body>
+		<script src="Vue.js"></script>
 		
-		<DIV ID="my">
-			<TABLE HEIGHT="100%" WIDTH="100%" STYLE="border: solid 1px black">
-				<TR ALIGN="center">
-					<TD VALIGN="middle">
+		<div id="my">
+			<table height="100%" width="100%" style="border: solid 1px black">
+				<tr align="center">
+					<td valign="middle">
 						<table style="border-collapse: collapse">
 							<tr v-for="row in rnd_im">
 								<td v-for="el in row">
@@ -14,18 +14,16 @@
 								</td>
 							</tr>
 						</table>
-					</TD>
-				</TR>
-			</TABLE>
-		</DIV>
+					</td>
+				</tr>
+			</table>
+		</div>
 		
-		<SCRIPT>
-		
+		<script>
 			new Vue({
 				el: "#my",
 				
-				data:
-				{
+				data: {
 					cols: 4,
 					rows: 2,
 					images: 
@@ -35,10 +33,8 @@
 						],
 				},
 				
-				computed:
-				{
-					rnd_im: function()
-					{
+				computed: {
+					rnd_im: function() {
 						var i;
 						var j;
 						
@@ -46,11 +42,9 @@
 						var arr;
 						
 						arr = [];
-						for (var a = 0; a < this.rows; a++)
-						{
+						for (var a = 0; a < this.rows; a++)	{
 							row = [];
-							for (var b = 0; b < this.cols; b++)
-							{
+							for (var b = 0; b < this.cols; b++)	{
 								i = Math.round(Math.random() * (this.rows - 1));
 								j = Math.round(Math.random() * (this.cols - 1));
 								
@@ -63,9 +57,6 @@
 					}
 				}
 			});
-		
-		</SCRIPT>
-		
-	</BODY>
-
-</HTML>
+		</script>	
+	</body>
+</html>
