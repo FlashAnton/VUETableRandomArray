@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<script src="Vue.js"></script>
+		
+		<div id="my">
+			<table height="100%" width="100%" style="border: solid 1px black">
+				<tr align="center">
+					<td valign="middle">
+						<table cellpadding="0" cellspacing="0" style="border-collapse: collapse">
+							<tr v-for="row in images">
+								<td v-for="el in row">
+									<img :src="el">
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script>
+			new Vue({
+				el: "#my",
+				
+				data: {
+					images: 
+						[
+							["up0001.jpg", "up0002.jpg", "up0003.jpg", "up0004.jpg"], 
+							["down0001.jpg", "down0002.jpg", "down0003.jpg", "down0004.jpg"],
+						],
+				}
+			});
+		</script>	
+	</body>
+</html>

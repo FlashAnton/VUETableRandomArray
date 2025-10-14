@@ -1,0 +1,62 @@
+<html>
+	<title>Случайные фрагменты изображения</title>
+	<body>
+		<script src="Vue.js"></script>
+		
+		<div id="my">
+			<table height="100%" width="100%" style="border: solid 1px black">
+				<tr align="center">
+					<td valign="middle">
+						<table cellpadding="0" cellspacing="0" style="border-collapse: collapse">
+							<tr v-for="row in rnd_im">
+								<td v-for="el in row">
+									<img :src="el">
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<script>
+			new Vue({
+				el: "#my",
+				
+				data: {
+					cols: 4,
+					rows: 2,
+					images: 
+						[
+							["up0001.jpg", "up0002.jpg", "up0003.jpg", "up0004.jpg"], 
+							["down0001.jpg", "down0002.jpg", "down0003.jpg", "down0004.jpg"],
+						],
+				},
+				
+				computed: {
+					rnd_im: function() {
+						var i;
+						var j;
+						
+						var row;
+						var arr;
+						
+						arr = [];
+						for (var a = 0; a < this.rows; a++)	{
+							row = [];
+							for (var b = 0; b < this.cols; b++)	{
+								i = Math.round(Math.random() * (this.rows - 1));
+								j = Math.round(Math.random() * (this.cols - 1));
+								
+								row.push(this.images[i][j]);
+							}
+							arr.push(row);
+						}
+						
+						return arr;
+					}
+				}
+			});
+		</script>	
+	</body>
+</html>
